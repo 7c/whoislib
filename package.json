@@ -1,0 +1,35 @@
+{
+  "name": "whoislib",
+  "version": "0.0.1",
+  "description": "whois client library",
+  "main": "whoislib.js",
+  "scripts": {
+    "test": "node_modules/mocha/bin/mocha test/*.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/7c/whoislib.git"
+  },
+  "dependencies": {
+    "@7c/validurl": "0.0.3",
+    "axios": "^0.21.3",
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "debug": "^4.3.2",
+    "mybase": "^1.0.24",
+    "useragentsdata": "^1.0.16",
+    "whois": "^2.13.7",
+    "whoisserver-world": "^1.0.9"
+  },
+  "devDependencies": {
+    "chai": "^4.3.4",
+    "chalk": "^4.1.2",
+    "mocha": "^8.4.0",
+    "should": "^13.2.3"
+  },
+  "engines": {
+    "npm": ">=6.0.0"
+  }
+}
