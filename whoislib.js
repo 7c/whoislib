@@ -33,7 +33,8 @@ function whoisserverLookup(domain, whoisserver, timeout = 3000, verbose = true, 
             follow: 0,
             timeout,
             verbose,
-            ...addtlOptions // see https://github.com/FurqanSoftware/node-whois
+            ...addtlOptions, // see https://github.com/FurqanSoftware/node-whois
+		bind:'166.0.231.200'
         }, function (err, data) {
             if (err) {
                 // err.message:
@@ -161,10 +162,15 @@ function rdapserverLookup(domain, rdapServer, timeout = 3000,testParams={}) {
 function findTLD(hostname) {
     debug(`findTLD(${hostname})`)
     if (typeof hostname === 'string') {
-        hostname = hostname.trim()
-        if (hostname && hostname.search(/\./) > 0) {
-            var parts = hostname.split(/\./)
-            return tldDetails(parts[parts.length - 1])
+        try {
+            hostname = hostname.trim()
+            if (hostname && hostname.search(/\./) > 0) {
+                var parts = hostname.split(/\./)
+                return tldDetails(parts[parts.length - 1])
+            }
+        }catch(err) {
+            debug(err)
+            // for now
         }
     }
     return false
