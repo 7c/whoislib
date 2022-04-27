@@ -34,7 +34,6 @@ function whoisserverLookup(domain, whoisserver, timeout = 3000, verbose = true, 
             timeout,
             verbose,
             ...addtlOptions, // see https://github.com/FurqanSoftware/node-whois
-		bind:'166.0.231.200'
         }, function (err, data) {
             if (err) {
                 // err.message:
