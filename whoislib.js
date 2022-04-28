@@ -25,14 +25,13 @@ function removeDoubleSlashes(url) {
  * @param  {number} timeout=3000
  * @param  {boolean} verbose=true
  */
-function whoisserverLookup(domain, whoisserver, timeout = 3000, verbose = true, addtlOptions={}) {
+function whoisserverLookup(domain, whoisserver, timeout = 3000, addtlOptions={}) {
     debug(`whoisserverLookup(${domain},${whoisserver})`)
     return new Promise((resolve, reject) => {
         whois.lookup(domain, {
             server: whoisserver,
-            follow: 0,
             timeout,
-            verbose,
+            verbose:true,
             ...addtlOptions, // see https://github.com/FurqanSoftware/node-whois
         }, function (err, data) {
             if (err) {
