@@ -38,7 +38,7 @@ function whoisserverLookup(domain, whoisserver, timeout = 3000, addtlOptions={})
             if (err) {
                 // err.message:
                 if (err.message.search(/timeout/i) > 0) {
-                    return reject(new whoisError('TIMEDOUT', err.code))
+                    return reject(new whoisError('TIMEDOUT', 'TIMEDOUT'))
                 }
 
                 if (err.code && err.code === 'ENOTFOUND') {
