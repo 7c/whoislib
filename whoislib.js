@@ -30,6 +30,7 @@ function whoisserverLookup(domain, whoisserver, timeout = 3000, addtlOptions={})
     return new Promise((resolve, reject) => {
         whois.lookup(domain, {
             server: whoisserver,
+            follow:0,
             timeout,
             verbose:true,
             ...addtlOptions, // see https://github.com/FurqanSoftware/node-whois
